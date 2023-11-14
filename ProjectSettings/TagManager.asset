@@ -13,7 +13,7 @@ TagManager:
   - UI
   - PlayerWeapon
   - Enemy
-  - 
+  - Environment
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3039943777
+    locked: 0
+  - name: CoverEverything
+    uniqueID: 1654531787
     locked: 0

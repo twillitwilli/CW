@@ -8,8 +8,7 @@ public class Player : MonoSingleton<Player>
 {
     public PlayerControls controls;
 
-    [SerializeField]
-    PlayerMovement _playerMovement;
+    public PlayerMovement playerMovement;
 
     public PlayerStats playerStats;
 
@@ -23,9 +22,9 @@ public class Player : MonoSingleton<Player>
         controls = new PlayerControls();
 
         // Movement
-        controls.PlayerBasicControls.Movement.performed += ctx => _playerMovement.Move(ctx.ReadValue<Vector2>());
-        controls.PlayerBasicControls.Run.performed += ctx => _playerMovement.RunToggle();
-        controls.PlayerBasicControls.Blink.performed += ctx => _playerMovement.Blink();
+        controls.PlayerBasicControls.Movement.performed += ctx => playerMovement.Move(ctx.ReadValue<Vector2>());
+        controls.PlayerBasicControls.Run.performed += ctx => playerMovement.RunToggle();
+        controls.PlayerBasicControls.Blink.performed += ctx => playerMovement.Blink();
 
         //Attacking
         controls.PlayerBasicControls.BasicAttack.performed += ctx => _playerAttack.Attack();

@@ -84,8 +84,8 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
 
             _playerStats.iFrame = true;
 
-            float xDirection = transform.position.x + (5 * _currentMovement.x);
-            float yDirection = transform.position.y + (5 * _currentMovement.y);
+            float xDirection = transform.position.x + (2.5f * _currentMovement.x);
+            float yDirection = transform.position.y + (2.5f * _currentMovement.y);
             transform.position = new Vector3(xDirection, yDirection, 0);
 
             CooldownDone(true, 3);

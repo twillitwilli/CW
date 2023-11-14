@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QTArts.AbstractClasses;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoSingleton<CameraController>
 {
     public enum CameraState
     {
         followPlayer,
         cutScene,
-        deathScreen
+        deathScreen,
+        lockCamera
     }
 
     public CameraState whichState;
@@ -17,6 +19,8 @@ public class CameraController : MonoBehaviour
 
     [SerializeField]
     GameObject _gameOverScreen;
+
+    public CameraEffects cameraEffects;
 
     private void Start()
     {
