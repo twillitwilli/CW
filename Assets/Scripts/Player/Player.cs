@@ -15,6 +15,8 @@ public class Player : MonoSingleton<Player>
     [SerializeField]
     PlayerAttack _playerAttack;
 
+    public Vector2 movement { get; private set; }
+
     public override void Awake()
     {
         base.Awake();
@@ -22,7 +24,9 @@ public class Player : MonoSingleton<Player>
         controls = new PlayerControls();
 
         // Movement
-        controls.PlayerBasicControls.Movement.performed += ctx => playerMovement.Move(ctx.ReadValue<Vector2>());
+        controls.PlayerBasicControls.Movement.performed += ctx => movement = ctx.ReadValue<Vector2>();
+        controls.PlayerBasicControls.Movement.canceled += ctx => movement = new Vector2(0, 0);
+        
         controls.PlayerBasicControls.Run.performed += ctx => playerMovement.RunToggle();
         controls.PlayerBasicControls.Blink.performed += ctx => playerMovement.Blink();
 

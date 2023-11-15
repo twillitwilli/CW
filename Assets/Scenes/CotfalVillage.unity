@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f8501e21d64634eb8f44a4b7de2d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 353102885}
   _playerStats: {fileID: 353102883}
   _facingDirection: {fileID: 426947100}
   tempEffect: {fileID: 1574511065}
