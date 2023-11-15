@@ -32,6 +32,7 @@ public class Player : MonoSingleton<Player>
 
         //Attacking
         controls.PlayerBasicControls.BasicAttack.performed += ctx => _playerAttack.Attack();
+        controls.PlayerBasicControls.KineticForce.performed += ctx => _playerAttack.KineticForce();
     }
 
     private void OnEnable()

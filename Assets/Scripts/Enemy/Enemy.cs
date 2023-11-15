@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using QTArts.Interfaces;
 
@@ -11,6 +12,14 @@ public class Enemy : MonoBehaviour, iDamagable<int>
         _speed;
 
     public float Health { get; set; }
+
+    [SerializeField]
+    SpriteRenderer _renderer;
+
+    [SerializeField]
+    Color
+        normalColor,
+        hitColor;
 
     Player _player;
 
@@ -27,11 +36,11 @@ public class Enemy : MonoBehaviour, iDamagable<int>
             ChasePlayer();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayerStats playerStats;
 
-        if (collision.TryGetComponent<PlayerStats>(out playerStats))
+        if (collision.gameObject.TryGetComponent<PlayerStats>(out playerStats))
             playerStats.Damage(1);
     }
 
@@ -46,9 +55,21 @@ public class Enemy : MonoBehaviour, iDamagable<int>
         transform.up = transform.position - target.position;
     }
 
-    public void Damage(int damageAmount)
+    public async void Damage(int damageAmount)
     {
         Health += damageAmount;
+
+        if (damageAmount < 0)
+        {
+            _renderer.color = hitColor;
+
+            await Task.Delay(250);
+
+            _renderer.color = normalColor;
+        }
+
+        if (Health > _maxHealth)
+            Health = _maxHealth;
 
         if (Health <= 0)
             Death();
@@ -56,6 +77,6 @@ public class Enemy : MonoBehaviour, iDamagable<int>
 
     public void Death()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "StrongAttack",
+                    "name": "KineticForce",
                     "type": "Button",
                     "id": "d2261be6-9be9-4b2b-b2da-a40e89bd8828",
                     "expectedControlType": "Button",
@@ -183,11 +183,22 @@
                 {
                     "name": "",
                     "id": "7f7f133d-1a2a-41ef-b256-768bb12c4774",
-                    "path": "",
+                    "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "StrongAttack",
+                    "action": "KineticForce",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "232a9dbd-96b0-4707-8e8f-220cd978c2dd",
+                    "path": "<XInputController>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KineticForce",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

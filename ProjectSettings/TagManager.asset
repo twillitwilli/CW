@@ -14,7 +14,7 @@ TagManager:
   - PlayerWeapon
   - Enemy
   - Environment
-  - 
+  - EnemyPusher
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3039943777
+    locked: 0
+  - name: Weapon
+    uniqueID: 1431411725
     locked: 0
   - name: CoverEverything
     uniqueID: 1654531787

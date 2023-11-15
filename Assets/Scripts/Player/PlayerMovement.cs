@@ -15,22 +15,32 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
     [SerializeField]
     PlayerFacingDirection _facingDirection;
 
-    bool _isRunning;
+    bool
+        _isRunning,
+        _dashReady = true;
 
     public bool lockMovement { private get; set; }
 
     public float cooldownTimer { get; set; }
 
     [SerializeField]
-    GameObject tempEffect;
+    GameObject
+        _dashEffect,
+        _dashReadyEffect;
 
-    private void Update()
+    private async void Update()
     {
         Movement();
 
-        if (!CooldownDone(false, 0))
+        if (CooldownDone(false, 0) && !_dashReady)
         {
-            // Running cooldown for blink
+            _dashReady = true;
+
+            _dashReadyEffect.SetActive(true);
+
+            await Task.Delay(500);
+
+            _dashReadyEffect.SetActive(false);
         }
     }
 
@@ -73,24 +83,20 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
     {
         if (CooldownDone(false, 0))
         {
-            tempEffect.SetActive(true);
-            tempEffect.transform.position = transform.position;
-
+            _dashEffect.SetActive(true);
             _playerStats.iFrame = true;
 
             float xDirection = transform.position.x + (2.5f * _player.movement.x);
             float yDirection = transform.position.y + (2.5f * _player.movement.y);
             transform.position = new Vector3(xDirection, yDirection, 0);
 
+            _dashReady = false;
             CooldownDone(true, 3);
 
             await Task.Delay(500);
 
             _playerStats.iFrame = false;
-
-            await Task.Delay(2);
-
-            tempEffect.SetActive(false);
+            _dashEffect.SetActive(false);
         }
     }
 

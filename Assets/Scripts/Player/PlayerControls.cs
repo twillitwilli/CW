@@ -82,7 +82,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""StrongAttack"",
+                    ""name"": ""KineticForce"",
                     ""type"": ""Button"",
                     ""id"": ""d2261be6-9be9-4b2b-b2da-a40e89bd8828"",
                     ""expectedControlType"": ""Button"",
@@ -205,11 +205,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7f7f133d-1a2a-41ef-b256-768bb12c4774"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""StrongAttack"",
+                    ""action"": ""KineticForce"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""232a9dbd-96b0-4707-8e8f-220cd978c2dd"",
+                    ""path"": ""<XInputController>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KineticForce"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -248,7 +259,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerBasicControls_Interact = m_PlayerBasicControls.FindAction("Interact", throwIfNotFound: true);
         m_PlayerBasicControls_UseItem = m_PlayerBasicControls.FindAction("UseItem", throwIfNotFound: true);
         m_PlayerBasicControls_BasicAttack = m_PlayerBasicControls.FindAction("BasicAttack", throwIfNotFound: true);
-        m_PlayerBasicControls_StrongAttack = m_PlayerBasicControls.FindAction("StrongAttack", throwIfNotFound: true);
+        m_PlayerBasicControls_KineticForce = m_PlayerBasicControls.FindAction("KineticForce", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -316,7 +327,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerBasicControls_Interact;
     private readonly InputAction m_PlayerBasicControls_UseItem;
     private readonly InputAction m_PlayerBasicControls_BasicAttack;
-    private readonly InputAction m_PlayerBasicControls_StrongAttack;
+    private readonly InputAction m_PlayerBasicControls_KineticForce;
     public struct PlayerBasicControlsActions
     {
         private @PlayerControls m_Wrapper;
@@ -327,7 +338,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_PlayerBasicControls_Interact;
         public InputAction @UseItem => m_Wrapper.m_PlayerBasicControls_UseItem;
         public InputAction @BasicAttack => m_Wrapper.m_PlayerBasicControls_BasicAttack;
-        public InputAction @StrongAttack => m_Wrapper.m_PlayerBasicControls_StrongAttack;
+        public InputAction @KineticForce => m_Wrapper.m_PlayerBasicControls_KineticForce;
         public InputActionMap Get() { return m_Wrapper.m_PlayerBasicControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -355,9 +366,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started += instance.OnBasicAttack;
             @BasicAttack.performed += instance.OnBasicAttack;
             @BasicAttack.canceled += instance.OnBasicAttack;
-            @StrongAttack.started += instance.OnStrongAttack;
-            @StrongAttack.performed += instance.OnStrongAttack;
-            @StrongAttack.canceled += instance.OnStrongAttack;
+            @KineticForce.started += instance.OnKineticForce;
+            @KineticForce.performed += instance.OnKineticForce;
+            @KineticForce.canceled += instance.OnKineticForce;
         }
 
         private void UnregisterCallbacks(IPlayerBasicControlsActions instance)
@@ -380,9 +391,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started -= instance.OnBasicAttack;
             @BasicAttack.performed -= instance.OnBasicAttack;
             @BasicAttack.canceled -= instance.OnBasicAttack;
-            @StrongAttack.started -= instance.OnStrongAttack;
-            @StrongAttack.performed -= instance.OnStrongAttack;
-            @StrongAttack.canceled -= instance.OnStrongAttack;
+            @KineticForce.started -= instance.OnKineticForce;
+            @KineticForce.performed -= instance.OnKineticForce;
+            @KineticForce.canceled -= instance.OnKineticForce;
         }
 
         public void RemoveCallbacks(IPlayerBasicControlsActions instance)
@@ -408,6 +419,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnUseItem(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
-        void OnStrongAttack(InputAction.CallbackContext context);
+        void OnKineticForce(InputAction.CallbackContext context);
     }
 }
