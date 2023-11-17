@@ -15,6 +15,9 @@ public class Player : MonoSingleton<Player>
     [SerializeField]
     PlayerAttack _playerAttack;
 
+    [SerializeField]
+    PlayerInteractionTrigger _playerInteractionTrigger;
+
     public Vector2 movement { get; private set; }
 
     public override void Awake()
@@ -30,9 +33,12 @@ public class Player : MonoSingleton<Player>
         controls.PlayerBasicControls.Run.performed += ctx => playerMovement.RunToggle();
         controls.PlayerBasicControls.Blink.performed += ctx => playerMovement.Blink();
 
-        //Attacking
+        // Attacking
         controls.PlayerBasicControls.BasicAttack.performed += ctx => _playerAttack.Attack();
         controls.PlayerBasicControls.KineticForce.performed += ctx => _playerAttack.KineticForce();
+
+        // Interaction
+        controls.PlayerBasicControls.Interact.performed += ctx => _playerInteractionTrigger.Interact();
     }
 
     private void OnEnable()
