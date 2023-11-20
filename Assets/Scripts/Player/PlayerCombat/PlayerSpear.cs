@@ -26,6 +26,13 @@ public class PlayerSpear : MonoBehaviour
 
         if (collision.TryGetComponent<Enemy>(out enemy))
             enemy.Damage(-_playerStats.attackDamage);
+
+        Breakable breakable;
+
+        if (collision.TryGetComponent<Breakable>(out breakable))
+        {
+            breakable.Damage(-_playerStats.attackDamage);
+        }
     }
 
     public void WeakAttack()

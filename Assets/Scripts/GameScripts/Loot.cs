@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Range(0, 100)]
+    public int lootChance;
+
+    public void LootChance()
     {
-        
+        int randomNum = Random.Range(0, 100);
+
+        if (lootChance >= randomNum)
+            DropLoot();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DropLoot()
     {
-        
+        Debug.Log("Drop Loot");
     }
 }
