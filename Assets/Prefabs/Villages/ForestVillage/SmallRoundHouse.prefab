@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 709093913558072580}
   - component: {fileID: 793980756940020856}
   m_Layer: 0
-  m_Name: House
+  m_Name: SmallRoundHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 486825a6309e93846a1a806507573217, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c79985d218f031478ee557cd15c89b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,8 +111,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579940672065866631}
   m_LocalRotation: {x: -0, y: -0, z: 0.16937456, w: 0.9855518}
-  m_LocalPosition: {x: 0.04, y: -0.12, z: 0}
-  m_LocalScale: {x: 5.4966054, y: 3.3210359, z: 1}
+  m_LocalPosition: {x: 0.49, y: 0.34, z: 0}
+  m_LocalScale: {x: 2.9703097, y: 3.1498365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7105594444822723661}
@@ -222,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7630465034608975625}
   m_LocalRotation: {x: -0, y: -0, z: 0.20853527, w: 0.9780149}
-  m_LocalPosition: {x: -0.25, y: -1.76, z: 0}
+  m_LocalPosition: {x: 1.58, y: -1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
