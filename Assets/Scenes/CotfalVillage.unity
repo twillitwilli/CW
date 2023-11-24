@@ -123,43 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!84 &878117
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1301
-  m_Height: 915
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &4266440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2003,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122791564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8d26f69fa6c26be499436f032aebae11, type: 2}
   m_CullingMode: 0
@@ -3453,7 +3416,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -4.31, y: 22.24, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -3998,6 +3961,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2432692107188456206, guid: 5a8bd7b7986d7cd4a9bd6039007ab935, type: 3}
   m_PrefabInstance: {fileID: 210226262}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &214221107
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1301
+  m_Height: 915
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 5
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &217903607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5598,7 +5598,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -17.62, y: -2.08, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -8050,7 +8050,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -20.94, y: 5.52, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -9439,7 +9439,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 5.66, y: -20.46, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -9898,6 +9898,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -10284,6 +10288,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -11044,7 +11052,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 2.35, y: -13.51, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -11998,6 +12006,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -13913,6 +13925,43 @@ Transform:
   m_Father: {fileID: 697385746}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &753165073
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1301
+  m_Height: 915
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &754824663
 GameObject:
   m_ObjectHideFlags: 0
@@ -20383,7 +20432,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -6.49, y: 13.82, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -21577,6 +21626,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6135984265945196586, guid: 1a00b029e10847c4689294d8a12ec98e, type: 3}
   m_PrefabInstance: {fileID: 935761486}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &938640763
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 5
+  m_Width: 1301
+  m_Height: 915
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 0
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &941187742
 GameObject:
   m_ObjectHideFlags: 0
@@ -23179,6 +23265,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _lockCameraPosition.z
       value: -10
       objectReference: {fileID: 0}
@@ -23568,7 +23658,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 20.74, y: -21.66, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -23699,6 +23789,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -24343,6 +24437,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -25580,6 +25678,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -27912,7 +28014,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 9.79, y: -10.33, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -28441,7 +28543,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 21.36, y: -7.68, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -28610,7 +28712,7 @@ MonoBehaviour:
   topdown: 0
   reflectionLayerIdx: 0
   _layerRenderer:
-    layerTexture: {fileID: 1887403416}
+    layerTexture: {fileID: 753165073}
     rendererType: 3
     sr: {fileID: 0}
     format: 0
@@ -28684,7 +28786,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 3
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1887403416}
+  m_TargetTexture: {fileID: 753165073}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -34208,6 +34310,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: db78901a9a7c9da498376d8e53a520f8, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -34864,7 +34970,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: 19.24, y: 14.42, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -35502,43 +35608,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1470289263608891516, guid: 9cf85085ca1cd7549a1c3e62b1d87d20, type: 3}
   m_PrefabInstance: {fileID: 1463747265}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1465176455
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1301
-  m_Height: 915
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 5
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &1471567228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35995,7 +36064,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -19.96, y: 22.64, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -36534,6 +36603,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -36949,6 +37022,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -37350,7 +37427,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -19.46, y: -9.01, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -38282,6 +38359,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -38378,6 +38459,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: 3d5525839cd5e864490d8b5a65f7c8ac, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -45571,6 +45656,10 @@ PrefabInstance:
       value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
       propertyPath: _enableObjects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -45675,43 +45764,6 @@ Transform:
   m_Father: {fileID: 340821737}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &1887403416
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1301
-  m_Height: 915
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 0
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1888507467
 GameObject:
   m_ObjectHideFlags: 0
@@ -45912,7 +45964,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -11.26, y: 10.06, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
@@ -47265,7 +47317,7 @@ MonoBehaviour:
   cam: {fileID: 1992565739}
   _mainCamera: {fileID: 122791566}
   _layerRenderer:
-    layerTexture: {fileID: 1465176455}
+    layerTexture: {fileID: 214221107}
     rendererType: 2
     sr: {fileID: 0}
     format: 16
@@ -47323,7 +47375,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 2048
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 1465176455}
+  m_TargetTexture: {fileID: 214221107}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -47404,6 +47456,10 @@ PrefabInstance:
     - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
       propertyPath: _newPlayerPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
+      propertyPath: changeToInsideVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 507882854323700069, guid: bccf0ab3d95aea14f88dbad9978f35cb, type: 3}
       propertyPath: _enableObjects.Array.size
@@ -47978,7 +48034,7 @@ MonoBehaviour:
   topdown: 1
   reflectionLayerIdx: 0
   _layerRenderer:
-    layerTexture: {fileID: 878117}
+    layerTexture: {fileID: 938640763}
     rendererType: 2
     sr: {fileID: 0}
     format: 0
@@ -48052,7 +48108,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4096
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 878117}
+  m_TargetTexture: {fileID: 938640763}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -48872,7 +48928,7 @@ MonoBehaviour:
   lockCamera: 0
   unlockCamera: 1
   changeToInsideVolume: 0
-  changeToOutsideVolume: 0
+  changeToOutsideVolume: 1
   _newPlayerPosition: {x: -10.71, y: -12.25, z: 0}
   _lockCameraPosition: {x: 0, y: 0, z: -10}
   _enableObjects:
