@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using QTArts.AbstractClasses;
 
@@ -15,16 +16,25 @@ public class CameraController : MonoSingleton<CameraController>
 
     public CameraState whichState;
 
+    public enum CutScene
+    {
+        enteredCotfalVillage
+    }
+
     Player _player;
+    Animator _animator;
 
     [SerializeField]
-    GameObject _gameOverScreen;
+    GameObject
+        _gameOverScreen,
+        _onScreenTextDisplayer;
 
     public CameraEffects cameraEffects;
 
     private void Start()
     {
         _player = Player.Instance;
+        _animator = GetComponent<Animator>();
     }
 
     public void Update()
@@ -53,5 +63,51 @@ public class CameraController : MonoSingleton<CameraController>
 
                 break;
         }
+    }
+
+    public void PlayCutScene(CutScene whichScene)
+    {
+        whichState = CameraState.cutScene;
+
+        _animator.enabled = true;
+
+        switch (whichScene)
+        {
+            case CutScene.enteredCotfalVillage:
+
+                _animator.Play("EnteredCotfalVillage");
+
+                break;
+        }
+    }
+
+    public void ReturnToDefaultZoom(string whichArea)
+    {
+        switch (whichArea)
+        {
+            case "CotfalVillage":
+                break;
+        }
+
+        _animator.Play("ZoomBackToNormal");
+    }
+
+    public void CameraIdleAnimation()
+    {
+        _animator.enabled = false;
+
+        whichState = CameraState.followPlayer;
+
+        _player.playerMovement.lockMovement = false;
+    }
+
+
+    public void ZoomedOutCotfalVillage()
+    {
+        _animator.Play("ZoomedOutCotfalVillage");
+
+        _onScreenTextDisplayer.SetActive(true);
+        OnScreenTextDisplayer.Instance.ChangeText(0);
+        OnScreenTextDisplayer.Instance.PlayFadeIn();
     }
 }

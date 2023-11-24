@@ -8,7 +8,9 @@ public class Door : MonoBehaviour
     public bool
         isLocked,
         lockCamera,
-        unlockCamera;
+        unlockCamera,
+        changeToInsideVolume,
+        changeToOutsideVolume;
 
     [SerializeField]
     Vector3
@@ -54,6 +56,8 @@ public class Door : MonoBehaviour
             CameraController.Instance.cameraEffects.ChangeCameraEffect(CameraEffects.Effects.quickSceneChangeCollapse);
 
             player.playerMovement.lockMovement = false;
+
+            AdjustVolume();
         }
     }
 
@@ -77,5 +81,14 @@ public class Door : MonoBehaviour
                 obj.SetActive(false);
             }
         }
+    }
+
+    public void AdjustVolume()
+    {
+        if (changeToInsideVolume)
+            MusicManager.Instance.AdjustInsideVolume();
+
+        if (changeToOutsideVolume)
+            MusicManager.Instance.ReturnToOutsideVolume();
     }
 }

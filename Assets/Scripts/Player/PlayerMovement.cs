@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
 
     public void Movement()
     {
-        if (Mathf.Abs(_player.movement.y) < 0.5f && Mathf.Abs(_player.movement.x) < 0.5f)
+        if (lockMovement || Mathf.Abs(_player.movement.y) < 0.5f && Mathf.Abs(_player.movement.x) < 0.5f)
             DisableRunning();
 
 
