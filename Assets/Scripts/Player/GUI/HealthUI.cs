@@ -6,23 +6,21 @@ using UnityEngine.UI;
 public class HealthUI : MonoBehaviour
 {
     [SerializeField]
-    PlayerStats _playerStats;
-
-    [SerializeField]
     Sprite
         _fullHealth,
+        _halfHeart,
         _emptyHealth;
 
     [SerializeField]
     Image[] _healthSprite;
 
-    public void AdjustHealthDisplay()
+    public void AdjustHealthDisplay(int currentHealth, int maxHealth)
     {
-        for (int i = 0; i < _playerStats.maxHealth; i++)
+        for (int i = 0; i < maxHealth; i++)
         {
             _healthSprite[i].gameObject.SetActive(true);
 
-            if (_playerStats.Health > i)
+            if (currentHealth > i)
                 _healthSprite[i].sprite = _fullHealth;
 
             else

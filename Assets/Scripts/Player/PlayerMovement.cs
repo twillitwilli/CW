@@ -52,9 +52,9 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
 
         if (!lockMovement)
         {
-            float xMovement = transform.position.x + (_playerStats.playerSpeed * _player.movement.x * Time.deltaTime);
-            float yMovement = transform.position.y + (_playerStats.playerSpeed * _player.movement.y * Time.deltaTime);
-            transform.position = new Vector3(xMovement, yMovement, 0);
+            float xMovement = _player.transform.position.x + (_playerStats.playerSpeed * _player.movement.x * Time.deltaTime);
+            float yMovement = _player.transform.position.y + (_playerStats.playerSpeed * _player.movement.y * Time.deltaTime);
+            _player.transform.position = new Vector3(xMovement, yMovement, 0);
 
             //transform.Translate(movement);
             _facingDirection.FacingDirection(_player.movement);
@@ -86,9 +86,9 @@ public class PlayerMovement : MonoBehaviour, iCooldownable
             _dashEffect.SetActive(true);
             _playerStats.iFrame = true;
 
-            float xDirection = transform.position.x + (2.5f * _player.movement.x);
-            float yDirection = transform.position.y + (2.5f * _player.movement.y);
-            transform.position = new Vector3(xDirection, yDirection, 0);
+            float xDirection = _player.transform.position.x + (2.5f * _player.movement.x);
+            float yDirection = _player.transform.position.y + (2.5f * _player.movement.y);
+            _player.transform.position = new Vector3(xDirection, yDirection, 0);
 
             _dashReady = false;
             CooldownDone(true, 3);

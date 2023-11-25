@@ -12,16 +12,24 @@ public class Player : MonoSingleton<Player>
 
     public PlayerStats playerStats;
 
+    public PlayerProgress playerProgress;
+
     [SerializeField]
     PlayerAttack _playerAttack;
 
     [SerializeField]
     PlayerInteractionTrigger _playerInteractionTrigger;
 
+    public string playerName { get; set; }
+    public int saveFile { get; set; }
+
     public Vector2 movement { get; private set; }
 
     public override void Awake()
     {
+        playerName = "TheForgotten";
+        saveFile = 0;
+
         base.Awake();
 
         controls = new PlayerControls();

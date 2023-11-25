@@ -13,18 +13,30 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
     HealthUI _healthUI;
 
     [SerializeField]
+    GoldUI _goldUI;
+
+    [SerializeField]
+    MagicUI _magicUI;
+
+    [SerializeField]
     Color
         _normalPlayerColor,
         _playerHitColor;
 
     public bool isDead { get; set; }
     public float Health { get; set; }
-    public float maxHealth { get; set; }
+    public int maxHealth { get; set; }
     public bool iFrame { get; set; }
 
     public float playerSpeed { get; set; }
-
     public int attackDamage { get; set; }
+
+    public int currentGold {get; set;}
+    public int maxGold { get; set; }
+    public float currentMana { get; set; }
+    public int maxMana { get; set; }
+    public int currentMagicKnives { get; set; }
+    public int maxMagicKnives { get; set; }
 
     void Start()
     {
@@ -39,11 +51,19 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
         playerSpeed = 8;
 
         attackDamage = 1;
+
+        maxGold = 250;
+    }
+
+    public void RestedStatRefill()
+    {
+        Health = maxHealth;
+        currentMana = maxMana;
     }
 
     public async void Damage(int damageAmount)
     {
-        if (damageAmount > 0)
+        if (damageAmount < 0)
         {
             if (!iFrame)
             {
@@ -68,8 +88,14 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
             Health = CheckStatLimit(Health, 0, maxHealth);
         }
 
-        _healthUI.AdjustHealthDisplay();
+        UpdateHealth();
     }
+
+    public void UpdateHealth()
+    {
+        _healthUI.AdjustHealthDisplay(Mathf.RoundToInt(Health), maxHealth);
+    }
+
 
     public void Death()
     {
@@ -96,5 +122,37 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
     {
         playerSpeed += adjustmentValue;
         playerSpeed = CheckStatLimit(playerSpeed, 1, 20);
+    }
+
+    public void AdjustGold(int adjustmentValue)
+    {
+        currentGold += adjustmentValue;
+
+        currentGold = Mathf.RoundToInt(CheckStatLimit(currentGold, 0, maxGold));
+
+        _goldUI.UpdateGoldDisplay(currentGold);
+    }
+
+    public void AdjustMana(int adjustmentValue)
+    {
+        currentMana += adjustmentValue;
+
+        currentMana = Mathf.RoundToInt(CheckStatLimit(currentMana, 0, maxMana));
+
+        _magicUI.UpdateMagicDisplay();
+    }
+
+    public void AdjustMagicKnives(int adjustmentValue)
+    {
+        currentMagicKnives += adjustmentValue;
+
+        currentMagicKnives = Mathf.RoundToInt(CheckStatLimit(currentMagicKnives, 0, maxMagicKnives));
+    }
+
+    public void UpdateGUI()
+    {
+        _healthUI.AdjustHealthDisplay(Mathf.RoundToInt(Health), maxHealth);
+        _goldUI.UpdateGoldDisplay(currentGold);
+        _magicUI.UpdateMagicDisplay();
     }
 }

@@ -17,6 +17,8 @@ public class Loot : MonoBehaviour
 
     private void DropLoot()
     {
-        Debug.Log("Drop Loot");
+        Debug.Log("Got Loot!");
+
+        LootManager.Instance.GetRandomItem(transform.position);
     }
 }

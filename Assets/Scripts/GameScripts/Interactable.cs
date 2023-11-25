@@ -10,10 +10,13 @@ public class Interactable : MonoBehaviour
         chest,
         jar,
         door,
-        sign
+        sign,
+        bed
     }
 
     public InteractableType interactableType;
+
+    public Vector3 playerLoadPosition;
 
     public void Interact()
     {
@@ -35,6 +38,16 @@ public class Interactable : MonoBehaviour
                 break;
 
             case InteractableType.sign:
+                break;
+
+            case InteractableType.bed:
+
+                Debug.Log("Sleeping");
+
+                Player.Instance.playerStats.RestedStatRefill();
+
+                SaveManager.Instance.SaveData(playerLoadPosition);
+
                 break;
         }
     }

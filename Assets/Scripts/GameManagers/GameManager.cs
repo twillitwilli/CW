@@ -5,11 +5,20 @@ using QTArts.AbstractClasses;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    Player _player;
     public bool returningPlayer { get; set; }
 
     private void Start()
     {
+        _player = Player.Instance;
+
         if (!returningPlayer)
-            Player.Instance.transform.position = new Vector3(2.83f, -0.37f, 0);
+        {
+            _player.transform.position = new Vector3(2.83f, -0.37f, 0);
+
+            _player.playerStats.Health = 1;
+            _player.playerStats.UpdateHealth();
+        }
+            
     }
 }

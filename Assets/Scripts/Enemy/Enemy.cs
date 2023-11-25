@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour, iDamagable<int>
         PlayerStats playerStats;
 
         if (collision.gameObject.TryGetComponent<PlayerStats>(out playerStats))
-            playerStats.Damage(1);
+            playerStats.Damage(-1);
     }
 
     private void ChasePlayer()
