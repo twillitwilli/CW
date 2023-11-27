@@ -21,14 +21,12 @@ public class Player : MonoSingleton<Player>
     PlayerInteractionTrigger _playerInteractionTrigger;
 
     public string playerName { get; set; }
-    public int saveFile { get; set; }
 
     public Vector2 movement { get; private set; }
 
     public override void Awake()
     {
         playerName = "TheForgotten";
-        saveFile = 0;
 
         base.Awake();
 
@@ -43,7 +41,7 @@ public class Player : MonoSingleton<Player>
 
         // Attacking
         controls.PlayerBasicControls.BasicAttack.performed += ctx => _playerAttack.Attack();
-        controls.PlayerBasicControls.KineticForce.performed += ctx => _playerAttack.KineticForce();
+        controls.PlayerBasicControls.UseItem.performed += ctx => _playerAttack.UseItem();
 
         // Interaction
         controls.PlayerBasicControls.Interact.performed += ctx => _playerInteractionTrigger.Interact();

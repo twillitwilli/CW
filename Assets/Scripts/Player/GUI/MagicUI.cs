@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QTArts.AbstractClasses;
 
-public class MagicUI : MonoBehaviour
+public class MagicUI : MonoSingleton<MagicUI>
 {
     public void Start()
     {
-        if (!Player.Instance.playerProgress.hasMagic)
+        if (!Player.Instance.playerProgress.hasMagicGlove)
             gameObject.SetActive(false);
     }
 

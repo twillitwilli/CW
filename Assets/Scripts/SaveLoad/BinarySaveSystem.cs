@@ -43,6 +43,10 @@ public static class BinarySaveSystem
         string fileName = Application.persistentDataPath + "/" + "PlayerData" + saveFile;
 
         if (File.Exists(fileName))
+        {
             File.Delete(fileName);
+
+            Debug.Log("File Deleted #" + saveFile);
+        }
     }
 }

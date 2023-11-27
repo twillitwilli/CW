@@ -133,7 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f773df47023f2614abaa469e4bc8177e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _droppableItemPool: []
+  _droppableItemPool:
+  - {fileID: 8373990740839670854}
+  - {fileID: 1656447988540656427}
 --- !u!1 &1998030747325344785
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7865115818208390287}
+  - component: {fileID: 2112872731699962544}
   m_Layer: 0
   m_Name: EnemyController
   m_TagString: Untagged
@@ -163,7 +166,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2976110073962970218}
+  - {fileID: 2718911349831787794}
   m_Father: {fileID: 7078276497115841107}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2112872731699962544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998030747325344785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f52ab22b9e1a7644a9d5db5c998723f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2019420883744177813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2718911349831787794}
+  m_Layer: 0
+  m_Name: EnemyPools
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2718911349831787794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019420883744177813}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7865115818208390287}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3236930754312511157
@@ -211,6 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _testLoading: 0
+  _testFileDelete: 0
+  _saveFile: 0
 --- !u!1 &3391050724266706897
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +305,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPrefab: {fileID: 4111076595509191363, guid: 9cf85085ca1cd7549a1c3e62b1d87d20, type: 3}
+--- !u!1 &3778701489694587007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6050233605744294213}
+  - component: {fileID: 2297679330726744942}
+  m_Layer: 0
+  m_Name: ChestLogicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6050233605744294213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778701489694587007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7078276497115841107}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2297679330726744942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778701489694587007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfb64f3a06ce524392014d508ad5f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chestItems: []
 --- !u!1 &4170154098412746456
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +414,7 @@ Transform:
   m_Children:
   - {fileID: 3627753069460974252}
   - {fileID: 3959684393814943182}
+  - {fileID: 6050233605744294213}
   - {fileID: 1957476993995083082}
   - {fileID: 598872348101573334}
   - {fileID: 7865115818208390287}

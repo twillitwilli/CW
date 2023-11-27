@@ -6,8 +6,15 @@ using UnityEngine;
 public class SaveData
 {
     public string playerName;
-    public int saveFile;
     public float[] playerPosition;
+
+    public int
+        saveFile,
+        saveLocation;
+
+    public bool[] chestsObtained;
+
+    public bool randomizerMode;
 
     // Player Stats
 
@@ -23,13 +30,14 @@ public class SaveData
 
     public bool
         hasSpear,
-        hasGuard,
+        hasScythe,
+        hasTheForgottenScythe,
+        hasMagicGlove,
         hasMagicKnifePouch,
         hasFireCrystal,
         hasGhostStaff,
         hasBookOfTruth,
         hasGravityCrystal,
         hasPortalCrystal,
-        hasMagicHourglass,
-        hasMagic;
+        hasMagicHourglass;
 }

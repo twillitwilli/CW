@@ -6,13 +6,14 @@ public class PlayerProgress : MonoBehaviour
 {
     public bool
      hasSpear,
-     hasGuard,
+     hasScythe,
+     hasTheForgottenScythe,
+     hasMagicGlove,
      hasMagicKnifePouch,
      hasFireCrystal,
      hasGhostStaff,
      hasBookOfTruth,
      hasGravityCrystal,
      hasPortalCrystal,
-     hasMagicHourglass,
-     hasMagic;
+     hasMagicHourglass;
 }

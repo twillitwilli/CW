@@ -5,6 +5,30 @@ using QTArts.Interfaces;
 
 public class PlayerAttack : MonoBehaviour, iCooldownable
 {
+    public enum EquippedWeapon
+    {
+        none,
+        spear,
+        scythe,
+        forgottenScythe
+    }
+
+    public EquippedWeapon currentEquippedWeapon;
+
+    public enum EquippedItem
+    {
+        none,
+        magicKnifePouch,
+        fireCrystal,
+        ghostStaff,
+        bookOfTruth,
+        gravityCrystal,
+        portalCrystal,
+        magicHourGlass
+    }
+
+    public EquippedItem currentEquippedItem;
+
     [SerializeField]
     PlayerFacingDirection _facingDirection;
 
@@ -25,12 +49,54 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
 
     public void Attack()
     {
-        if (!isAttacking)
+        switch (currentEquippedWeapon)
         {
-            isAttacking = true;
-            _facingDirection.lockDirection = true;
-            _playerSpear.gameObject.SetActive(true);
-            _playerSpear.StrongAttack();
+            case EquippedWeapon.spear:
+
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                    _facingDirection.lockDirection = true;
+                    _playerSpear.gameObject.SetActive(true);
+                    _playerSpear.StrongAttack();
+                }
+
+                break;
+
+            case EquippedWeapon.scythe:
+                break;
+
+            case EquippedWeapon.forgottenScythe:
+                break;
+        }
+
+        
+    }
+
+    public void UseItem()
+    {
+        switch (currentEquippedItem)
+        {
+            case EquippedItem.magicKnifePouch:
+                break;
+
+            case EquippedItem.fireCrystal:
+                break;
+
+            case EquippedItem.ghostStaff:
+                break;
+
+            case EquippedItem.bookOfTruth:
+                break;
+
+            case EquippedItem.gravityCrystal:
+                break;
+
+            case EquippedItem.portalCrystal:
+                break;
+
+            case EquippedItem.magicHourGlass:
+                break;
         }
     }
 

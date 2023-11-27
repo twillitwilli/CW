@@ -9,9 +9,6 @@ public class SaveManager : MonoSingleton<SaveManager>
     PlayerStats _playerStats;
     PlayerProgress _playerProgress;
 
-    [SerializeField]
-    bool _testLoading;
-
     public void Start()
     {
         _player = Player.Instance;
@@ -19,21 +16,13 @@ public class SaveManager : MonoSingleton<SaveManager>
         _playerProgress = _player.playerProgress;
     }
 
-    private void Update()
-    {
-        if (_testLoading)
-        {
-            LoadData(0);
-
-            _testLoading = false;
-        }
-    }
-
     public void SaveData(Vector3 savePosition)
     {
         Debug.Log("Saving Game");
 
-        BinarySaveSystem.SaveData(CreateSaveData(savePosition), _player.saveFile);
+        BinarySaveSystem.SaveData(CreateSaveData(savePosition), GameManager.Instance.saveFile);
+
+        Debug.Log("Save Complete");
     }
 
     public void LoadData(int saveFile)
@@ -44,6 +33,13 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         if (loadedData != null)
             UpdateLoadedData(loadedData);
+
+        else
+        {
+            Debug.Log("New Game Started");
+
+            GameManager.Instance.LoadSaveArea();
+        }
     }
 
     public void DeleteData(int saveFile)
@@ -56,12 +52,18 @@ public class SaveManager : MonoSingleton<SaveManager>
         SaveData newData = new SaveData();
 
         newData.playerName = _player.playerName;
-        newData.saveFile = _player.saveFile;
 
         newData.playerPosition = new float[3];
         newData.playerPosition[0] = savePosition.x;
         newData.playerPosition[1] = savePosition.y;
         newData.playerPosition[2] = savePosition.z;
+
+        newData.saveFile = GameManager.Instance.saveFile;
+        newData.saveLocation = GameManager.Instance.saveLocation;
+        newData.randomizerMode = GameManager.Instance.randomizerMode;
+
+        newData.chestsObtained = new bool[ChestLogicManager.Instance.chestObtained.Length];
+        newData.chestsObtained = ChestLogicManager.Instance.chestObtained;
 
         // Player Stats
         newData.maxHealth = _playerStats.maxHealth;
@@ -73,7 +75,9 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         // Player Progression
         newData.hasSpear = _playerProgress.hasSpear;
-        newData.hasGuard = _playerProgress.hasGuard;
+        newData.hasScythe = _playerProgress.hasScythe;
+        newData.hasTheForgottenScythe = _playerProgress.hasTheForgottenScythe;
+        newData.hasMagicGlove = _playerProgress.hasMagicGlove;
         newData.hasMagicKnifePouch = _playerProgress.hasMagicKnifePouch;
         newData.hasFireCrystal = _playerProgress.hasFireCrystal;
         newData.hasGhostStaff = _playerProgress.hasGhostStaff;
@@ -81,7 +85,6 @@ public class SaveManager : MonoSingleton<SaveManager>
         newData.hasGravityCrystal = _playerProgress.hasGravityCrystal;
         newData.hasPortalCrystal = _playerProgress.hasPortalCrystal;
         newData.hasMagicHourglass = _playerProgress.hasMagicHourglass;
-        newData.hasMagic = _playerProgress.hasMagic;
 
         return newData;
     }
@@ -89,10 +92,16 @@ public class SaveManager : MonoSingleton<SaveManager>
     private void UpdateLoadedData(SaveData loadedData)
     {
         _player.playerName = loadedData.playerName;
-        _player.saveFile = loadedData.saveFile;
 
         Vector3 playerLoadPosition = new Vector3(loadedData.playerPosition[0], loadedData.playerPosition[1], loadedData.playerPosition[2]);
         _player.transform.position = playerLoadPosition;
+
+        GameManager.Instance.saveFile = loadedData.saveFile;
+        GameManager.Instance.saveLocation = loadedData.saveLocation;
+        GameManager.Instance.LoadSaveArea();
+        ChestLogicManager.Instance.chestObtained = loadedData.chestsObtained;
+        ChestLogicManager.Instance.CheckChestStatus();
+        GameManager.Instance.randomizerMode = loadedData.randomizerMode;
 
         // Player Stats
         _playerStats.maxHealth = loadedData.maxHealth;
@@ -106,7 +115,9 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         // Player Progression
         _playerProgress.hasSpear = loadedData.hasSpear;
-        _playerProgress.hasGuard = loadedData.hasGuard;
+        _playerProgress.hasScythe = loadedData.hasScythe;
+        _playerProgress.hasTheForgottenScythe = loadedData.hasTheForgottenScythe;
+        _playerProgress.hasMagicGlove = loadedData.hasMagicGlove;
         _playerProgress.hasMagicKnifePouch = loadedData.hasMagicKnifePouch;
         _playerProgress.hasFireCrystal = loadedData.hasFireCrystal;
         _playerProgress.hasGhostStaff = loadedData.hasGhostStaff;
@@ -114,6 +125,7 @@ public class SaveManager : MonoSingleton<SaveManager>
         _playerProgress.hasGravityCrystal = loadedData.hasGravityCrystal;
         _playerProgress.hasPortalCrystal = loadedData.hasPortalCrystal;
         _playerProgress.hasMagicHourglass = loadedData.hasMagicHourglass;
-        _playerProgress.hasMagic = loadedData.hasMagic;
+
+        Debug.Log("File Loaded");
     }
 }

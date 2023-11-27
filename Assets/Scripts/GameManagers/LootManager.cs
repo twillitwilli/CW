@@ -50,7 +50,7 @@ public class LootManager : MonoSingleton<LootManager>
 
     public void DropMana(Vector3 spawnPosition)
     {
-        if (!Player.Instance.playerProgress.hasMagic)
+        if (!Player.Instance.playerProgress.hasMagicGlove)
         {
             DropGold(spawnPosition);
         }
