@@ -42,11 +42,6 @@ public class SaveManager : MonoSingleton<SaveManager>
         }
     }
 
-    public void DeleteData(int saveFile)
-    {
-        BinarySaveSystem.DeleteFileSave(saveFile);
-    }
-
     private SaveData CreateSaveData(Vector3 savePosition)
     {
         SaveData newData = new SaveData();

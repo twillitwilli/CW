@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7290f7875c59c194fbb0584960ecd068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveFileSelector: {fileID: 4406683}
   _saveFile: 1
 --- !u!114 &216590947
 MonoBehaviour:
@@ -617,9 +618,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadGameButton, Assembly-CSharp
-        m_MethodName: CreateLoadGame
+      - m_Target: {fileID: 216590946}
+        m_TargetAssemblyTypeName: TrashSaveFile, Assembly-CSharp
+        m_MethodName: DeleteSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -720,6 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7290f7875c59c194fbb0584960ecd068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveFileSelector: {fileID: 4406683}
   _saveFile: 4
 --- !u!114 &227896742
 MonoBehaviour:
@@ -765,9 +767,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadGameButton, Assembly-CSharp
-        m_MethodName: CreateLoadGame
+      - m_Target: {fileID: 227896741}
+        m_TargetAssemblyTypeName: TrashSaveFile, Assembly-CSharp
+        m_MethodName: DeleteSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2020,6 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7290f7875c59c194fbb0584960ecd068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveFileSelector: {fileID: 4406683}
   _saveFile: 3
 --- !u!114 &1172394460
 MonoBehaviour:
@@ -2065,9 +2068,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadGameButton, Assembly-CSharp
-        m_MethodName: CreateLoadGame
+      - m_Target: {fileID: 1172394459}
+        m_TargetAssemblyTypeName: TrashSaveFile, Assembly-CSharp
+        m_MethodName: DeleteSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2168,6 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7290f7875c59c194fbb0584960ecd068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveFileSelector: {fileID: 4406683}
   _saveFile: 2
 --- !u!114 &1308945758
 MonoBehaviour:
@@ -2213,9 +2217,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadGameButton, Assembly-CSharp
-        m_MethodName: CreateLoadGame
+      - m_Target: {fileID: 1308945757}
+        m_TargetAssemblyTypeName: TrashSaveFile, Assembly-CSharp
+        m_MethodName: DeleteSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

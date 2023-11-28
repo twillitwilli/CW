@@ -5,10 +5,15 @@ using UnityEngine;
 public class TrashSaveFile : MonoBehaviour
 {
     [SerializeField]
+    SaveFileSelector _saveFileSelector;
+
+    [SerializeField]
     int _saveFile;
 
     public void DeleteSave()
     {
-        SaveManager.Instance.DeleteData(_saveFile);
+        BinarySaveSystem.DeleteFileSave(_saveFile);
+
+        _saveFileSelector.CheckSaveFileStatus();
     }
 }

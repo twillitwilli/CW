@@ -2,7 +2,7 @@
     "name": "PlayerControls",
     "maps": [
         {
-            "name": "PlayerBasicControls",
+            "name": "ControllerSupport",
             "id": "76eaa4e9-465a-42d1-a482-18d12dd8da67",
             "actions": [
                 {
@@ -76,17 +76,6 @@
                     "name": "",
                     "id": "aebac1a1-219b-4794-8139-fbae13f4c889",
                     "path": "<XInputController>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c837dabb-3a26-429a-b9f0-f21e5a1c2fb8",
-                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

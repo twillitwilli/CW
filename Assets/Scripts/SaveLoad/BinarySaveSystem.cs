@@ -48,5 +48,7 @@ public static class BinarySaveSystem
 
             Debug.Log("File Deleted #" + saveFile);
         }
+        else
+            Debug.Log("File Doesnt Exist");
     }
 }

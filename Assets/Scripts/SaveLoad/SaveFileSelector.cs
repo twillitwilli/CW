@@ -12,9 +12,14 @@ public class SaveFileSelector : MonoBehaviour
     {
         GameManager.Instance.menuOpened = true;
 
+        CheckSaveFileStatus();
+    }
+
+    public void CheckSaveFileStatus()
+    {
         for (int i = 0; i < _gameSaveFile.Length; i++)
         {
-            string fileName = Application.persistentDataPath + "/" + "PlayerData" + (i+1);
+            string fileName = Application.persistentDataPath + "/" + "PlayerData" + (i + 1);
 
             if (File.Exists(fileName))
             {

@@ -24,7 +24,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""PlayerBasicControls"",
+            ""name"": ""ControllerSupport"",
             ""id"": ""76eaa4e9-465a-42d1-a482-18d12dd8da67"",
             ""actions"": [
                 {
@@ -98,17 +98,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""aebac1a1-219b-4794-8139-fbae13f4c889"",
                     ""path"": ""<XInputController>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c837dabb-3a26-429a-b9f0-f21e5a1c2fb8"",
-                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -220,14 +209,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // PlayerBasicControls
-        m_PlayerBasicControls = asset.FindActionMap("PlayerBasicControls", throwIfNotFound: true);
-        m_PlayerBasicControls_Movement = m_PlayerBasicControls.FindAction("Movement", throwIfNotFound: true);
-        m_PlayerBasicControls_Run = m_PlayerBasicControls.FindAction("Run", throwIfNotFound: true);
-        m_PlayerBasicControls_Blink = m_PlayerBasicControls.FindAction("Blink", throwIfNotFound: true);
-        m_PlayerBasicControls_Interact = m_PlayerBasicControls.FindAction("Interact", throwIfNotFound: true);
-        m_PlayerBasicControls_UseItem = m_PlayerBasicControls.FindAction("UseItem", throwIfNotFound: true);
-        m_PlayerBasicControls_BasicAttack = m_PlayerBasicControls.FindAction("BasicAttack", throwIfNotFound: true);
+        // ControllerSupport
+        m_ControllerSupport = asset.FindActionMap("ControllerSupport", throwIfNotFound: true);
+        m_ControllerSupport_Movement = m_ControllerSupport.FindAction("Movement", throwIfNotFound: true);
+        m_ControllerSupport_Run = m_ControllerSupport.FindAction("Run", throwIfNotFound: true);
+        m_ControllerSupport_Blink = m_ControllerSupport.FindAction("Blink", throwIfNotFound: true);
+        m_ControllerSupport_Interact = m_ControllerSupport.FindAction("Interact", throwIfNotFound: true);
+        m_ControllerSupport_UseItem = m_ControllerSupport.FindAction("UseItem", throwIfNotFound: true);
+        m_ControllerSupport_BasicAttack = m_ControllerSupport.FindAction("BasicAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -286,34 +275,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerBasicControls
-    private readonly InputActionMap m_PlayerBasicControls;
-    private List<IPlayerBasicControlsActions> m_PlayerBasicControlsActionsCallbackInterfaces = new List<IPlayerBasicControlsActions>();
-    private readonly InputAction m_PlayerBasicControls_Movement;
-    private readonly InputAction m_PlayerBasicControls_Run;
-    private readonly InputAction m_PlayerBasicControls_Blink;
-    private readonly InputAction m_PlayerBasicControls_Interact;
-    private readonly InputAction m_PlayerBasicControls_UseItem;
-    private readonly InputAction m_PlayerBasicControls_BasicAttack;
-    public struct PlayerBasicControlsActions
+    // ControllerSupport
+    private readonly InputActionMap m_ControllerSupport;
+    private List<IControllerSupportActions> m_ControllerSupportActionsCallbackInterfaces = new List<IControllerSupportActions>();
+    private readonly InputAction m_ControllerSupport_Movement;
+    private readonly InputAction m_ControllerSupport_Run;
+    private readonly InputAction m_ControllerSupport_Blink;
+    private readonly InputAction m_ControllerSupport_Interact;
+    private readonly InputAction m_ControllerSupport_UseItem;
+    private readonly InputAction m_ControllerSupport_BasicAttack;
+    public struct ControllerSupportActions
     {
         private @PlayerControls m_Wrapper;
-        public PlayerBasicControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_PlayerBasicControls_Movement;
-        public InputAction @Run => m_Wrapper.m_PlayerBasicControls_Run;
-        public InputAction @Blink => m_Wrapper.m_PlayerBasicControls_Blink;
-        public InputAction @Interact => m_Wrapper.m_PlayerBasicControls_Interact;
-        public InputAction @UseItem => m_Wrapper.m_PlayerBasicControls_UseItem;
-        public InputAction @BasicAttack => m_Wrapper.m_PlayerBasicControls_BasicAttack;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerBasicControls; }
+        public ControllerSupportActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_ControllerSupport_Movement;
+        public InputAction @Run => m_Wrapper.m_ControllerSupport_Run;
+        public InputAction @Blink => m_Wrapper.m_ControllerSupport_Blink;
+        public InputAction @Interact => m_Wrapper.m_ControllerSupport_Interact;
+        public InputAction @UseItem => m_Wrapper.m_ControllerSupport_UseItem;
+        public InputAction @BasicAttack => m_Wrapper.m_ControllerSupport_BasicAttack;
+        public InputActionMap Get() { return m_Wrapper.m_ControllerSupport; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerBasicControlsActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerBasicControlsActions instance)
+        public static implicit operator InputActionMap(ControllerSupportActions set) { return set.Get(); }
+        public void AddCallbacks(IControllerSupportActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerBasicControlsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerBasicControlsActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_ControllerSupportActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ControllerSupportActionsCallbackInterfaces.Add(instance);
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
@@ -334,7 +323,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.canceled += instance.OnBasicAttack;
         }
 
-        private void UnregisterCallbacks(IPlayerBasicControlsActions instance)
+        private void UnregisterCallbacks(IControllerSupportActions instance)
         {
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
@@ -356,22 +345,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.canceled -= instance.OnBasicAttack;
         }
 
-        public void RemoveCallbacks(IPlayerBasicControlsActions instance)
+        public void RemoveCallbacks(IControllerSupportActions instance)
         {
-            if (m_Wrapper.m_PlayerBasicControlsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_ControllerSupportActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerBasicControlsActions instance)
+        public void SetCallbacks(IControllerSupportActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerBasicControlsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_ControllerSupportActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerBasicControlsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_ControllerSupportActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerBasicControlsActions @PlayerBasicControls => new PlayerBasicControlsActions(this);
-    public interface IPlayerBasicControlsActions
+    public ControllerSupportActions @ControllerSupport => new ControllerSupportActions(this);
+    public interface IControllerSupportActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
