@@ -13,13 +13,17 @@ public class SaveData
         saveLocation;
 
     public bool[] chestsObtained;
+    public bool[] itemsObtained;
 
-    public bool randomizerMode;
+    public bool
+        returningPlayer,
+        randomizerMode;
 
     // Player Stats
 
     public int
         maxHealth,
+        currentHeartPiece,
         currentGold,
         maxGold,
         maxMana,

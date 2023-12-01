@@ -20,6 +20,8 @@ public class SaveManager : MonoSingleton<SaveManager>
     {
         Debug.Log("Saving Game");
 
+        GameManager.Instance.returningPlayer = true;
+
         BinarySaveSystem.SaveData(CreateSaveData(savePosition), GameManager.Instance.saveFile);
 
         Debug.Log("Save Complete");
@@ -38,6 +40,7 @@ public class SaveManager : MonoSingleton<SaveManager>
         {
             Debug.Log("New Game Started");
 
+            GameManager.Instance.returningPlayer = false;
             GameManager.Instance.LoadSaveArea();
         }
     }
@@ -55,13 +58,22 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         newData.saveFile = GameManager.Instance.saveFile;
         newData.saveLocation = GameManager.Instance.saveLocation;
+        newData.returningPlayer = GameManager.Instance.returningPlayer;
         newData.randomizerMode = GameManager.Instance.randomizerMode;
 
         newData.chestsObtained = new bool[ChestLogicManager.Instance.chestObtained.Length];
         newData.chestsObtained = ChestLogicManager.Instance.chestObtained;
 
+        newData.itemsObtained = new bool[ChestLogicManager.Instance.obtainableItems.Length];
+
+        for (int i = 0; i < ChestLogicManager.Instance.obtainableItems.Length; i++)
+        {
+            newData.itemsObtained[i] = ChestLogicManager.Instance.obtainableItems[i].obtainedItem;
+        }
+
         // Player Stats
         newData.maxHealth = _playerStats.maxHealth;
+        newData.currentHeartPiece = _playerStats.currentHeartPiece;
         newData.currentGold = _playerStats.currentGold;
         newData.maxGold = _playerStats.maxGold;
         newData.maxMana = _playerStats.maxMana;
@@ -84,6 +96,8 @@ public class SaveManager : MonoSingleton<SaveManager>
         return newData;
     }
 
+
+    // Loading for returning player
     private void UpdateLoadedData(SaveData loadedData)
     {
         _player.playerName = loadedData.playerName;
@@ -93,13 +107,21 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         GameManager.Instance.saveFile = loadedData.saveFile;
         GameManager.Instance.saveLocation = loadedData.saveLocation;
+        GameManager.Instance.returningPlayer = true;
         GameManager.Instance.LoadSaveArea();
+
         ChestLogicManager.Instance.chestObtained = loadedData.chestsObtained;
         ChestLogicManager.Instance.CheckChestStatus();
         GameManager.Instance.randomizerMode = loadedData.randomizerMode;
 
+        for (int i = 0; i < ChestLogicManager.Instance.obtainableItems.Length; i++)
+        {
+            ChestLogicManager.Instance.obtainableItems[i].obtainedItem = loadedData.itemsObtained[i];
+        }
+
         // Player Stats
         _playerStats.maxHealth = loadedData.maxHealth;
+        _playerStats.currentHeartPiece = loadedData.currentHeartPiece;
         _playerStats.currentGold = loadedData.currentGold;
         _playerStats.maxGold = loadedData.maxGold;
         _playerStats.maxMana = loadedData.maxMana;

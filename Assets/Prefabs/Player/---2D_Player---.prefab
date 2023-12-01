@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3357930541923597756}
   m_Layer: 3
-  m_Name: Scythe
+  m_Name: ScytheAttacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4859,68 +4859,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &627045791980031530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2379364644287331970}
-  m_Layer: 3
-  m_Name: MagicGlove
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2379364644287331970
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627045791980031530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &634592774628632361
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2617999047425229029}
-  m_Layer: 3
-  m_Name: MagicKnifePouch
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2617999047425229029
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634592774628632361}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408696934223158879
 GameObject:
   m_ObjectHideFlags: 0
@@ -10041,37 +9979,6 @@ MonoBehaviour:
   _facingDirection: {fileID: 1253038575107734285}
   _dashEffect: {fileID: 159067130930537076}
   _dashReadyEffect: {fileID: 8086564283576111118}
---- !u!1 &3464348958005236609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3980843037820351756}
-  m_Layer: 3
-  m_Name: FireCrystal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3980843037820351756
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3464348958005236609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3943637986060062083
 GameObject:
   m_ObjectHideFlags: 0
@@ -10105,37 +10012,6 @@ Transform:
   m_Father: {fileID: 4178373611113622038}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4320911898160808734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7943572612580379386}
-  m_Layer: 3
-  m_Name: BookOfTruth
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7943572612580379386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4320911898160808734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4429819346247903842
 GameObject:
   m_ObjectHideFlags: 0
@@ -10145,6 +10021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3944889430418116644}
+  - component: {fileID: 8479131538846923939}
   m_Layer: 3
   m_Name: PlayerWeapons
   m_TagString: Untagged
@@ -10170,6 +10047,32 @@ Transform:
   m_Father: {fileID: 1528866058795220717}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8479131538846923939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429819346247903842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca391b9411d58344aa8b259bb31f25ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWeapons:
+  - itemSpite: {fileID: 21300000, guid: 1781c2684cb0a0544ad32d11c6ca0c49, type: 3}
+    itemName: Spear
+    canEquip: 0
+    weaponAttacks:
+    - {fileID: 4673887572584068733}
+  - itemSpite: {fileID: 21300000, guid: 25590f6e5977a384cb3bcad3c89fb5d2, type: 3}
+    itemName: Sycthe
+    canEquip: 0
+    weaponAttacks: []
+  - itemSpite: {fileID: 21300000, guid: 4df717081e739c54abcb2c511ac2c3a6, type: 3}
+    itemName: Forgotten Sycthe
+    canEquip: 0
+    weaponAttacks: []
 --- !u!1 &4542878250588812596
 GameObject:
   m_ObjectHideFlags: 0
@@ -10180,7 +10083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266172971312274012}
   m_Layer: 3
-  m_Name: Spear
+  m_Name: SpearAttacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10200,37 +10103,6 @@ Transform:
   m_Children:
   - {fileID: 1142567909403518600}
   m_Father: {fileID: 3944889430418116644}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4623332226949079426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4519695476651644385}
-  m_Layer: 3
-  m_Name: GravityCrystal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4519695476651644385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623332226949079426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4673887572584068733
@@ -10474,6 +10346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052e5cae9c5ac4e4e808cd32161a6ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEquippedWeapon: 0
+  currentEquippedItem: 0
   _facingDirection: {fileID: 1253038575107734285}
   _playerSpear: {fileID: 3503306957802546733}
 --- !u!1 &5242628106399513724
@@ -10485,6 +10359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439024487412576295}
+  - component: {fileID: 6354363763097657580}
   m_Layer: 3
   m_Name: PlayerItems
   m_TagString: Untagged
@@ -10503,18 +10378,44 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2379364644287331970}
-  - {fileID: 2617999047425229029}
-  - {fileID: 3980843037820351756}
-  - {fileID: 4546192197612283212}
-  - {fileID: 7943572612580379386}
-  - {fileID: 4519695476651644385}
-  - {fileID: 7267428296580840239}
-  - {fileID: 3660774403573276761}
+  m_Children: []
   m_Father: {fileID: 1528866058795220717}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6354363763097657580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242628106399513724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e942a67eda9182a4494e8ed92af58e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerItems:
+  - itemSpite: {fileID: 21300000, guid: a2190f1994f81834cbb1f71b4b7a4677, type: 3}
+    itemName: Magic Knife Pouch
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: 2437acbcc05713e40acb9c3c0093e5c2, type: 3}
+    itemName: Fire Crystal
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: 80a8a15cea698c444a912aae4022b3d7, type: 3}
+    itemName: Ghost Staff
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: 097f9d56c916b5d4c8071e4f2d2ccba0, type: 3}
+    itemName: Book Of Truth
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: d96d7d94777e2d74686097749e730f22, type: 3}
+    itemName: Gravity Crystal
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: 170d8a5ed49069a44b73ee3ce5e70bad, type: 3}
+    itemName: Portal Crystal
+    canEquip: 0
+  - itemSpite: {fileID: 21300000, guid: 6e786837a8213584681cd86bc52e8925, type: 3}
+    itemName: Magic Hourglass
+    canEquip: 0
 --- !u!1 &7029196709772196514
 GameObject:
   m_ObjectHideFlags: 0
@@ -10607,7 +10508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 742669171389744837}
   m_Layer: 3
-  m_Name: TheForgottenSycthe
+  m_Name: TheForgottenSyctheAttacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10626,37 +10527,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3944889430418116644}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7591724326986303036
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4546192197612283212}
-  m_Layer: 3
-  m_Name: GhostStaff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4546192197612283212
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7591724326986303036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8086564283576111118
@@ -15545,68 +15415,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &8635947285556404193
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3660774403573276761}
-  m_Layer: 3
-  m_Name: MagicHourGlass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3660774403573276761
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8635947285556404193}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8782533447855725420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7267428296580840239}
-  m_Layer: 3
-  m_Name: PortalCrystal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7267428296580840239
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8782533447855725420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4439024487412576295}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9097199808389683011
 GameObject:
   m_ObjectHideFlags: 0
@@ -15619,7 +15427,6 @@ GameObject:
   - component: {fileID: 5795603446256849846}
   - component: {fileID: 4491984451847167285}
   - component: {fileID: 2486288431605174195}
-  - component: {fileID: 7088485442077544908}
   - component: {fileID: 4887600469995042579}
   m_Layer: 3
   m_Name: ---2D_Player---
@@ -15644,7 +15451,7 @@ Transform:
   - {fileID: 1528866058795220717}
   - {fileID: 3361358182499840886}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5795603446256849846
 SpriteRenderer:
@@ -15685,7 +15492,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1255023519
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 53aab1d023434ae4d97a38d8f836c205, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -15770,18 +15577,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7088485442077544908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097199808389683011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec7bab0248fcd043acf60abd2aeca00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4887600469995042579
 MonoBehaviour:
   m_ObjectHideFlags: 0

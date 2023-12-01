@@ -12,12 +12,16 @@ public class Interactable : MonoBehaviour
         jar,
         door,
         sign,
-        bed
+        bed,
+        shopItem
     }
 
     public InteractableType interactableType;
 
     public int indexValue;
+
+    [SerializeField]
+    bool _interactableBool;
 
     [SerializeField]
     Animator _animator;
@@ -37,13 +41,33 @@ public class Interactable : MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
     }
 
+    public void SetPrice(int priceOfItem)
+    {
+        _intValue = priceOfItem;
+    }
+
     public void Interact()
     {
         switch (interactableType)
         {
             case InteractableType.NPC:
 
-                GetComponent<NPC>().Talk();
+                if (!_interactableBool)
+                    GetComponent<NPC>().Talk();
+
+                else
+                {
+                    if (Player.Instance.playerStats.currentGold > _intValue)
+                    {
+                        GetComponent<NPC>().BuyItem();
+
+                        Player.Instance.playerStats.AdjustGold(-_intValue);
+                    }
+                        
+
+                    else
+                        Debug.Log("Not Enough Money!");
+                }
 
                 break;
 
@@ -65,13 +89,29 @@ public class Interactable : MonoBehaviour
 
             case InteractableType.bed:
 
-                Debug.Log("Sleeping");
+                CameraController.Instance.cameraEffects.CameraCloseOpen();
 
-                Player.Instance.playerStats.RestedStatRefill();
+                Debug.Log("Sleeping");
 
                 GameManager.Instance.saveLocation = indexValue;
 
                 SaveManager.Instance.SaveData(playerLoadPosition);
+
+                SaveManager.Instance.LoadData(GameManager.Instance.saveFile);
+
+                break;
+
+            case InteractableType.shopItem:
+
+                if (Player.Instance.playerStats.currentGold > _intValue)
+                {
+                    GetComponent<ShopItem>().BuyItem();
+
+                    Player.Instance.playerStats.AdjustGold(-_intValue);
+                }
+
+                else
+                    Debug.Log("Not Enough Money!");
 
                 break;
         }
@@ -81,11 +121,7 @@ public class Interactable : MonoBehaviour
     {
         _animator.Play("ChestOpening");
 
-        if (!GameManager.Instance.randomizerMode)
-            ChestLogicManager.Instance.SpawnObject(_intValue, transform.position, _parentObject);
-
-        else
-            ChestLogicManager.Instance.ProgressionLogic(_intValue, transform.position, _parentObject);
+        ChestLogicManager.Instance.GetItem(indexValue);
     }
 
     public async void ChestOpened()

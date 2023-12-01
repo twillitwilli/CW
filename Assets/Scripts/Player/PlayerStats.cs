@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
     public bool isDead { get; set; }
     public float Health { get; set; }
     public int maxHealth { get; set; }
+    public int currentHeartPiece { get; set; }
     public bool iFrame { get; set; }
 
     public float playerSpeed { get; set; }
@@ -89,6 +90,21 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
         }
 
         UpdateHealth();
+    }
+
+    public void GotHeartPiece()
+    {
+        currentHeartPiece++;
+
+        if (currentHeartPiece == 5)
+        {
+            maxHealth++;
+            currentHeartPiece = 0;
+
+            Health = maxHealth;
+
+            UpdateHealth();
+        }
     }
 
     public void UpdateHealth()

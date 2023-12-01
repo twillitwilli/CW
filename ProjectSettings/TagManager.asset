@@ -44,11 +44,11 @@ TagManager:
   - name: Environment
     uniqueID: 3486107581
     locked: 0
-  - name: Player
-    uniqueID: 3039943777
-    locked: 0
   - name: NPC
     uniqueID: 2262675667
+    locked: 0
+  - name: Player
+    uniqueID: 3039943777
     locked: 0
   - name: Enemy
     uniqueID: 120232303

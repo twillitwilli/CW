@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CameraEffects : MonoBehaviour
 {
+    Player _player;
+
     public enum Effects
     {
         quickSceneChangeExpand,
@@ -12,6 +15,11 @@ public class CameraEffects : MonoBehaviour
 
     [SerializeField]
     GameObject[] effect;
+
+    private void Start()
+    {
+        _player = Player.Instance;
+    }
 
     public void ChangeCameraEffect(Effects effects)
     {
@@ -25,5 +33,18 @@ public class CameraEffects : MonoBehaviour
                 effect[0].GetComponent<Animator>().Play("Collapse");
                 break;
         }
+    }
+
+    public async void CameraCloseOpen()
+    {
+        _player.playerMovement.lockMovement = true;
+
+        ChangeCameraEffect(CameraEffects.Effects.quickSceneChangeExpand);
+
+        await Task.Delay(500);
+
+        CameraController.Instance.cameraEffects.ChangeCameraEffect(CameraEffects.Effects.quickSceneChangeCollapse);
+
+        _player.playerMovement.lockMovement = false;
     }
 }

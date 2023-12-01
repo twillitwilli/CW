@@ -47,6 +47,9 @@ public class GameManager : MonoSingleton<GameManager>
 
                     _player.playerStats.Health = 1;
                     _player.playerStats.UpdateHealth();
+
+                    if (randomizerMode)
+                        ChestLogicManager.Instance.RandomizeItems();
                 }
 
                 break;

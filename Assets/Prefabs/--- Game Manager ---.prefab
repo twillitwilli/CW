@@ -257,9 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e60239b8f917746b201ed9e5aa98b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testLoading: 0
-  _testFileDelete: 0
-  _saveFile: 0
 --- !u!1 &3391050724266706897
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +346,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfb64f3a06ce524392014d508ad5f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chestItems: []
+  obtainableItems:
+  - itemName: 20 Gold
+    obtainedItem: 0
+    itemIndex: 0
+    itemLevel: 0
+  - itemName: 10 Gold
+    obtainedItem: 0
+    itemIndex: 1
+    itemLevel: 0
+  - itemName: 30 Gold
+    obtainedItem: 0
+    itemIndex: 2
+    itemLevel: 0
+  - itemName: 100 Gold
+    obtainedItem: 0
+    itemIndex: 3
+    itemLevel: 0
+  - itemName: Spear
+    obtainedItem: 0
+    itemIndex: 4
+    itemLevel: 0
+  - itemName: Heart Piece
+    obtainedItem: 0
+    itemIndex: 5
+    itemLevel: 0
+  - itemName: 20 Gold
+    obtainedItem: 0
+    itemIndex: 6
+    itemLevel: 0
+  _numberOfChestsInLevel: 
+  chestObtained: 
 --- !u!1 &4170154098412746456
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7078276497115841107}
   - component: {fileID: 2465486774835811941}
-  - component: {fileID: 5463540761412194615}
   m_Layer: 0
   m_Name: --- Game Manager ---
   m_TagString: Untagged
@@ -419,7 +445,7 @@ Transform:
   - {fileID: 598872348101573334}
   - {fileID: 7865115818208390287}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2465486774835811941
 MonoBehaviour:
@@ -433,18 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2813f11fdf0386d4997548166f2d60e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5463540761412194615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379601342310041611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec7bab0248fcd043acf60abd2aeca00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  GUI: {fileID: 0}
 --- !u!1 &4771446117086396754
 GameObject:
   m_ObjectHideFlags: 0

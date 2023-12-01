@@ -33,7 +33,7 @@ public class Door : MonoBehaviour
 
             CameraController.Instance.cameraEffects.ChangeCameraEffect(CameraEffects.Effects.quickSceneChangeExpand);
 
-            await Task.Delay(500);
+            await Task.Delay(250);
 
             DisableObjects();
 
@@ -51,7 +51,7 @@ public class Door : MonoBehaviour
             }
                 
 
-            await Task.Delay(1000);
+            await Task.Delay(250);
 
             CameraController.Instance.cameraEffects.ChangeCameraEffect(CameraEffects.Effects.quickSceneChangeCollapse);
 
