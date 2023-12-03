@@ -80,6 +80,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""79f33cc2-6d34-424b-b1eb-080e90c44cef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce6f42a8-d832-4219-9fc8-1a23c1a49012"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PreviousItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ab78626-79e2-44f2-b810-6a909a671847"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -203,6 +230,72 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""BasicAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""265cb19d-1eda-4ef2-9619-ea081f35de45"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51004e61-b310-468c-a138-7015dfbc1043"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb87f629-8f22-4761-bca7-71cb4f38b3ca"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5df9d613-c703-462f-9874-13b8ef305b49"",
+                    ""path"": ""<XInputController>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7736cdd6-87c2-4b75-8468-412010433847"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PreviousItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05a42ae2-20eb-445c-8866-1f287fec7144"",
+                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PreviousItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -217,6 +310,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_ControllerSupport_Interact = m_ControllerSupport.FindAction("Interact", throwIfNotFound: true);
         m_ControllerSupport_UseItem = m_ControllerSupport.FindAction("UseItem", throwIfNotFound: true);
         m_ControllerSupport_BasicAttack = m_ControllerSupport.FindAction("BasicAttack", throwIfNotFound: true);
+        m_ControllerSupport_Menu = m_ControllerSupport.FindAction("Menu", throwIfNotFound: true);
+        m_ControllerSupport_NextItem = m_ControllerSupport.FindAction("NextItem", throwIfNotFound: true);
+        m_ControllerSupport_PreviousItem = m_ControllerSupport.FindAction("PreviousItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -284,6 +380,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_ControllerSupport_Interact;
     private readonly InputAction m_ControllerSupport_UseItem;
     private readonly InputAction m_ControllerSupport_BasicAttack;
+    private readonly InputAction m_ControllerSupport_Menu;
+    private readonly InputAction m_ControllerSupport_NextItem;
+    private readonly InputAction m_ControllerSupport_PreviousItem;
     public struct ControllerSupportActions
     {
         private @PlayerControls m_Wrapper;
@@ -294,6 +393,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_ControllerSupport_Interact;
         public InputAction @UseItem => m_Wrapper.m_ControllerSupport_UseItem;
         public InputAction @BasicAttack => m_Wrapper.m_ControllerSupport_BasicAttack;
+        public InputAction @Menu => m_Wrapper.m_ControllerSupport_Menu;
+        public InputAction @NextItem => m_Wrapper.m_ControllerSupport_NextItem;
+        public InputAction @PreviousItem => m_Wrapper.m_ControllerSupport_PreviousItem;
         public InputActionMap Get() { return m_Wrapper.m_ControllerSupport; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -321,6 +423,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started += instance.OnBasicAttack;
             @BasicAttack.performed += instance.OnBasicAttack;
             @BasicAttack.canceled += instance.OnBasicAttack;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @NextItem.started += instance.OnNextItem;
+            @NextItem.performed += instance.OnNextItem;
+            @NextItem.canceled += instance.OnNextItem;
+            @PreviousItem.started += instance.OnPreviousItem;
+            @PreviousItem.performed += instance.OnPreviousItem;
+            @PreviousItem.canceled += instance.OnPreviousItem;
         }
 
         private void UnregisterCallbacks(IControllerSupportActions instance)
@@ -343,6 +454,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started -= instance.OnBasicAttack;
             @BasicAttack.performed -= instance.OnBasicAttack;
             @BasicAttack.canceled -= instance.OnBasicAttack;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @NextItem.started -= instance.OnNextItem;
+            @NextItem.performed -= instance.OnNextItem;
+            @NextItem.canceled -= instance.OnNextItem;
+            @PreviousItem.started -= instance.OnPreviousItem;
+            @PreviousItem.performed -= instance.OnPreviousItem;
+            @PreviousItem.canceled -= instance.OnPreviousItem;
         }
 
         public void RemoveCallbacks(IControllerSupportActions instance)
@@ -368,5 +488,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnUseItem(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnNextItem(InputAction.CallbackContext context);
+        void OnPreviousItem(InputAction.CallbackContext context);
     }
 }

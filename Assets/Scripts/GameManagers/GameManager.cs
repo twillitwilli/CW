@@ -16,8 +16,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     public GameObject GUI;
 
+    [SerializeField]
+    bool _devMode;
+    public bool developerModeActive { get; private set; }
+
     private void Start()
     {
+        if (_devMode)
+            developerModeActive = true;
+
         GUI.SetActive(false);
 
         saveFile = -1;

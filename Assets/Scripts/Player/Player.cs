@@ -45,6 +45,11 @@ public class Player : MonoSingleton<Player>
 
         // Interaction
         controls.ControllerSupport.Interact.performed += ctx => _playerInteractionTrigger.Interact();
+
+        // Inventory Screen
+        controls.ControllerSupport.Menu.performed += ctx => InventoryScreen.Instance.OpenCloseInventory();
+        controls.ControllerSupport.NextItem.performed += ctx => InventoryScreen.Instance.NextPage();
+        controls.ControllerSupport.PreviousItem.performed += ctx => InventoryScreen.Instance.PreviousPage();
     }
 
     private void OnEnable()

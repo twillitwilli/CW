@@ -163,5 +163,7 @@ public class ChestLogicManager : MonoSingleton<ChestLogicManager>
             case "Mimic":
                 break;
         }
+
+        InventoryScreen.Instance.UpdateItems();
     }
 }
