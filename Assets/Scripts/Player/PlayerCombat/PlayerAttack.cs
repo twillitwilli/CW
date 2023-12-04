@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     }
 
     public EquippedWeapon currentEquippedWeapon;
+    public bool weaponIdx { get; set; }
 
     public enum EquippedItem
     {
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     }
 
     public EquippedItem currentEquippedItem;
+    public bool itemIdx { get; set; }
 
     [SerializeField]
     PlayerFacingDirection _facingDirection;
@@ -35,9 +37,22 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     [SerializeField]
     PlayerSpear _playerSpear;
 
+    [SerializeField]
+    PlayerWeaponController _weaponController;
+
+    [SerializeField]
+    PlayerItemController _itemController;
+
     public bool isAttacking { get; set; }
 
     public float cooldownTimer { get; set; }
+
+    EquippedUI _equippedUI;
+
+    private void Start()
+    {
+        _equippedUI = EquippedUI.Instance;
+    }
 
     private void Update()
     {
@@ -71,6 +86,72 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
         }
 
         
+    }
+
+    public void EquipWeapon(PlayerAttack.EquippedWeapon whichWeapon)
+    {
+        currentEquippedWeapon = whichWeapon;
+
+        switch (whichWeapon)
+        {
+            case EquippedWeapon.spear:
+                _equippedUI.ChangePrimaryWeapon(0);
+                break;
+
+            case EquippedWeapon.scythe:
+                _equippedUI.ChangePrimaryWeapon(1);
+                break;
+
+            case EquippedWeapon.forgottenScythe:
+                _equippedUI.ChangePrimaryWeapon(2);
+                break;
+        }
+    }
+
+    public void EquipItem(PlayerAttack.EquippedItem whichItem)
+    {
+        currentEquippedItem = whichItem;
+
+        switch (whichItem)
+        {
+            case EquippedItem.magicKnifePouch:
+                _equippedUI.ChangeItem(4);
+                break;
+
+            case EquippedItem.fireCrystal:
+                _equippedUI.ChangeItem(5);
+                break;
+
+            case EquippedItem.ghostStaff:
+                _equippedUI.ChangeItem(6);
+                break;
+
+            case EquippedItem.bookOfTruth:
+                _equippedUI.ChangeItem(7);
+                break;
+
+            case EquippedItem.gravityCrystal:
+                _equippedUI.ChangeItem(8);
+                break;
+
+            case EquippedItem.portalCrystal:
+                _equippedUI.ChangeItem(9);
+                break;
+
+            case EquippedItem.magicHourGlass:
+                _equippedUI.ChangeItem(10);
+                break;
+        }
+    }
+
+    public void NextItem()
+    {
+
+    }
+
+    public void PreviousItem()
+    {
+
     }
 
     public void UseItem()

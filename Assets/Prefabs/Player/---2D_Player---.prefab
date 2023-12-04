@@ -4859,6 +4859,68 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &226869879468262022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664012373070112737}
+  m_Layer: 3
+  m_Name: MagicKnives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1664012373070112737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226869879468262022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1214201723989929684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489125641962315413}
+  m_Layer: 3
+  m_Name: PortalCrystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &489125641962315413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214201723989929684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1408696934223158879
 GameObject:
   m_ObjectHideFlags: 0
@@ -9775,6 +9837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852ef7fa242cbea4fbed9b3deb5aae31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAttack: {fileID: 2341127978947630389}
   hasSpear: 0
   hasScythe: 0
   hasTheForgottenScythe: 0
@@ -10021,7 +10084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3944889430418116644}
-  - component: {fileID: 8479131538846923939}
+  - component: {fileID: 790784087170330975}
   m_Layer: 3
   m_Name: PlayerWeapons
   m_TagString: Untagged
@@ -10047,7 +10110,7 @@ Transform:
   m_Father: {fileID: 1528866058795220717}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8479131538846923939
+--- !u!114 &790784087170330975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10059,20 +10122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca391b9411d58344aa8b259bb31f25ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeapons:
-  - itemSpite: {fileID: 21300000, guid: 1781c2684cb0a0544ad32d11c6ca0c49, type: 3}
-    itemName: Spear
-    canEquip: 0
-    weaponAttacks:
-    - {fileID: 4673887572584068733}
-  - itemSpite: {fileID: 21300000, guid: 25590f6e5977a384cb3bcad3c89fb5d2, type: 3}
-    itemName: Sycthe
-    canEquip: 0
-    weaponAttacks: []
-  - itemSpite: {fileID: 21300000, guid: 4df717081e739c54abcb2c511ac2c3a6, type: 3}
-    itemName: Forgotten Sycthe
-    canEquip: 0
-    weaponAttacks: []
 --- !u!1 &4542878250588812596
 GameObject:
   m_ObjectHideFlags: 0
@@ -10350,6 +10399,37 @@ MonoBehaviour:
   currentEquippedItem: 0
   _facingDirection: {fileID: 1253038575107734285}
   _playerSpear: {fileID: 3503306957802546733}
+--- !u!1 &4766609862060202350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3894355595339073907}
+  m_Layer: 3
+  m_Name: GravityCrystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3894355595339073907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766609862060202350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5242628106399513724
 GameObject:
   m_ObjectHideFlags: 0
@@ -10359,7 +10439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439024487412576295}
-  - component: {fileID: 6354363763097657580}
+  - component: {fileID: 541557480504779703}
   m_Layer: 3
   m_Name: PlayerItems
   m_TagString: Untagged
@@ -10378,11 +10458,18 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1664012373070112737}
+  - {fileID: 4859107945531276941}
+  - {fileID: 2340645818319894892}
+  - {fileID: 4704474698579777804}
+  - {fileID: 3894355595339073907}
+  - {fileID: 489125641962315413}
+  - {fileID: 4643329994711057642}
   m_Father: {fileID: 1528866058795220717}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6354363763097657580
+--- !u!114 &541557480504779703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10394,28 +10481,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e942a67eda9182a4494e8ed92af58e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerItems:
-  - itemSpite: {fileID: 21300000, guid: a2190f1994f81834cbb1f71b4b7a4677, type: 3}
-    itemName: Magic Knife Pouch
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: 2437acbcc05713e40acb9c3c0093e5c2, type: 3}
-    itemName: Fire Crystal
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: 80a8a15cea698c444a912aae4022b3d7, type: 3}
-    itemName: Ghost Staff
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: 097f9d56c916b5d4c8071e4f2d2ccba0, type: 3}
-    itemName: Book Of Truth
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: d96d7d94777e2d74686097749e730f22, type: 3}
-    itemName: Gravity Crystal
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: 170d8a5ed49069a44b73ee3ce5e70bad, type: 3}
-    itemName: Portal Crystal
-    canEquip: 0
-  - itemSpite: {fileID: 21300000, guid: 6e786837a8213584681cd86bc52e8925, type: 3}
-    itemName: Magic Hourglass
-    canEquip: 0
+--- !u!1 &6198712432756241543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4643329994711057642}
+  m_Layer: 3
+  m_Name: MagicHourglass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4643329994711057642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198712432756241543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7029196709772196514
 GameObject:
   m_ObjectHideFlags: 0
@@ -10446,6 +10542,68 @@ Transform:
   m_Children:
   - {fileID: 2229456599933950921}
   m_Father: {fileID: 1142567909403518600}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7162912250568149441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4704474698579777804}
+  m_Layer: 3
+  m_Name: BookOfTruth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4704474698579777804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162912250568149441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7209913213155580691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2340645818319894892}
+  m_Layer: 3
+  m_Name: GhostStaff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2340645818319894892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209913213155580691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7432115450004376907
@@ -10527,6 +10685,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3944889430418116644}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7863422817474357107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4859107945531276941}
+  m_Layer: 3
+  m_Name: FireCrystal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4859107945531276941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863422817474357107}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4439024487412576295}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8086564283576111118

@@ -505,7 +505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &28706320
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -566,8 +566,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28706319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.36, y: 36.51, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 36.6, y: 50.57, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -17043,7 +17043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &697385746
 Transform:
   m_ObjectHideFlags: 0
@@ -19719,6 +19719,10 @@ PrefabInstance:
     - target: {fileID: 5323050708606501886, guid: cb21de59e6f85434cb7164bcc643f1c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018717390314330369, guid: cb21de59e6f85434cb7164bcc643f1c6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25613,6 +25617,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 739295670}
     m_Modifications:
+    - target: {fileID: 2341759662428079174, guid: 1a00b029e10847c4689294d8a12ec98e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3000065780741547307, guid: 1a00b029e10847c4689294d8a12ec98e, type: 3}
       propertyPath: m_Name
       value: villageTree (21)
@@ -40921,6 +40929,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 739295670}
     m_Modifications:
+    - target: {fileID: 2341759662428079174, guid: 1a00b029e10847c4689294d8a12ec98e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3000065780741547307, guid: 1a00b029e10847c4689294d8a12ec98e, type: 3}
       propertyPath: m_Name
       value: villageTree (22)

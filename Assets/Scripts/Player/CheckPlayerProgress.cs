@@ -41,6 +41,12 @@ public class CheckPlayerProgress : MonoBehaviour
 
     public void UpdateProgress()
     {
+        if (_playerProgress == null)
+            _playerProgress = Player.Instance.playerProgress;
+
+        if (_playerStats = null)
+            _playerStats = Player.Instance.playerStats;
+
         switch (_checkWhichStat)
         {
             case CheckProgress.spear:

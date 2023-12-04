@@ -39,30 +39,6 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
     public int currentMagicKnives { get; set; }
     public int maxMagicKnives { get; set; }
 
-    public enum EquipableWeapons
-    {
-        none,
-        spear,
-        scythe,
-        theForgottenScythe
-    }
-
-    public EquipableWeapons currentWeaponEquipped;
-
-    public enum EquipableItems
-    {
-        none,
-        magicKnifePouch,
-        fireCrystal,
-        ghostStaff,
-        bookOfTruth,
-        gravityCrystal,
-        portalCrystal,
-        magicHourglass
-    }
-
-    public EquipableItems currenntItemEquipped;
-
     void Start()
     {
         DefaultStats();
@@ -194,15 +170,5 @@ public class PlayerStats : MonoBehaviour, iDamagable<int>
         _healthUI.AdjustHealthDisplay(Mathf.RoundToInt(Health), maxHealth);
         _goldUI.UpdateGoldDisplay(currentGold);
         _magicUI.UpdateMagicDisplay();
-    }
-
-    public void NextItem()
-    {
-
-    }
-
-    public void PreviousItem()
-    {
-
     }
 }

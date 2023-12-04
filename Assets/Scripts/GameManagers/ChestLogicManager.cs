@@ -68,25 +68,39 @@ public class ChestLogicManager : MonoSingleton<ChestLogicManager>
         switch (item.itemName)
         {
             case "Spear":
+
                 _playerProgress.hasSpear = true;
+                _playerProgress.ObtainedWeapon(PlayerAttack.EquippedWeapon.spear);
+
                 break;
 
             case "Scythe":
+
                 _playerProgress.hasScythe = true;
+                _playerProgress.ObtainedWeapon(PlayerAttack.EquippedWeapon.scythe);
+
                 break;
 
             case "The Forgotten Scythe":
+
                 _playerProgress.hasTheForgottenScythe = true;
+                _playerProgress.ObtainedWeapon(PlayerAttack.EquippedWeapon.forgottenScythe);
+
                 break;
 
             case "Magic Glove":
+
                 _playerProgress.hasMagicGlove = true;
+
                 break;
 
             case "Magic Knife Pouch":
 
                 if (!_playerProgress.hasMagicKnifePouch)
+                {
                     _playerProgress.hasMagicKnifePouch = true;
+                    _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.magicKnifePouch);
+                }
 
                 else
                     _playerStats.maxMagicKnives += 15;
@@ -94,27 +108,45 @@ public class ChestLogicManager : MonoSingleton<ChestLogicManager>
                 break;
 
             case "Fire Crystal":
+
                 _playerProgress.hasFireCrystal = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.fireCrystal);
+
                 break;
 
             case "Ghost Staff":
+
                 _playerProgress.hasGhostStaff = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.ghostStaff);
+
                 break;
 
             case "Book Of Truth":
+
                 _playerProgress.hasBookOfTruth = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.bookOfTruth);
+
                 break;
 
             case "Gravity Crystal":
+
                 _playerProgress.hasGravityCrystal = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.gravityCrystal);
+
                 break;
 
             case "Portal Crystal":
+
                 _playerProgress.hasPortalCrystal = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.portalCrystal);
+
                 break;
 
             case "Magic Hour Glass":
+
                 _playerProgress.hasMagicHourglass = true;
+                _playerProgress.ObtainedItem(PlayerAttack.EquippedItem.magicHourGlass);
+
                 break;
 
             case "1 Gold":
@@ -158,6 +190,7 @@ public class ChestLogicManager : MonoSingleton<ChestLogicManager>
                 break;
 
             case "Heart Piece":
+                _playerStats.GotHeartPiece();
                 break;
 
             case "Mimic":
