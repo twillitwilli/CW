@@ -40,8 +40,7 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     [SerializeField]
     PlayerWeaponController _weaponController;
 
-    [SerializeField]
-    PlayerItemController _itemController;
+    public PlayerItemController itemController;
 
     public bool isAttacking { get; set; }
 
@@ -152,33 +151,6 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     public void PreviousItem()
     {
 
-    }
-
-    public void UseItem()
-    {
-        switch (currentEquippedItem)
-        {
-            case EquippedItem.magicKnifePouch:
-                break;
-
-            case EquippedItem.fireCrystal:
-                break;
-
-            case EquippedItem.ghostStaff:
-                break;
-
-            case EquippedItem.bookOfTruth:
-                break;
-
-            case EquippedItem.gravityCrystal:
-                break;
-
-            case EquippedItem.portalCrystal:
-                break;
-
-            case EquippedItem.magicHourGlass:
-                break;
-        }
     }
 
     public void KineticForce()

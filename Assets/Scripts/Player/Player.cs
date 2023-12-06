@@ -24,6 +24,14 @@ public class Player : MonoSingleton<Player>
 
     public Vector2 movement { get; private set; }
 
+    [SerializeField]
+    BoxCollider2D _collider;
+
+    [SerializeField]
+    GameObject _ghostEffect;
+    public bool ghostForm { get; set; }
+    public GameObject playerMimic { get; set; }
+
     public override void Awake()
     {
         playerName = "TheForgotten";
@@ -41,7 +49,7 @@ public class Player : MonoSingleton<Player>
 
         // Attacking
         controls.ControllerSupport.BasicAttack.performed += ctx => _playerAttack.Attack();
-        controls.ControllerSupport.UseItem.performed += ctx => _playerAttack.UseItem();
+        controls.ControllerSupport.UseItem.performed += ctx => _playerAttack.itemController.UseItem();
 
         // Interaction
         controls.ControllerSupport.Interact.performed += ctx => _playerInteractionTrigger.Interact();
@@ -60,5 +68,28 @@ public class Player : MonoSingleton<Player>
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    private void Update()
+    {
+        if (ghostForm && Vector3.Distance(transform.position, playerMimic.transform.position) > 10)
+            GhostForm(false);
+    }
+
+    public void GhostForm(bool ghost)
+    {
+        if (ghostForm)
+        {
+            transform.position = playerMimic.transform.position;
+            Destroy(playerMimic);
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+
+        else
+            GetComponent<SpriteRenderer>().enabled = false;
+
+        _collider.isTrigger = ghost;
+        _ghostEffect.SetActive(ghost);
+        ghostForm = ghost;
     }
 }
