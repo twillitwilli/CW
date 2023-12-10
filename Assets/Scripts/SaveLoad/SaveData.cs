@@ -33,10 +33,12 @@ public class SaveData
     // Player Progression
 
     public bool
+        hasWeapon,
         hasSpear,
         hasScythe,
         hasTheForgottenScythe,
         hasMagicGlove,
+        hasItem,
         hasMagicKnifePouch,
         hasFireCrystal,
         hasGhostStaff,

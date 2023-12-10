@@ -20,8 +20,6 @@ public class SaveManager : MonoSingleton<SaveManager>
     {
         Debug.Log("Saving Game");
 
-        GameManager.Instance.returningPlayer = true;
-
         BinarySaveSystem.SaveData(CreateSaveData(savePosition), GameManager.Instance.saveFile);
 
         Debug.Log("Save Complete");
@@ -33,7 +31,7 @@ public class SaveManager : MonoSingleton<SaveManager>
 
         SaveData loadedData = BinarySaveSystem.LoadData(saveFile);
 
-        if (loadedData != null)
+        if (loadedData != null && loadedData.returningPlayer)
             UpdateLoadedData(loadedData);
 
         else
@@ -42,6 +40,8 @@ public class SaveManager : MonoSingleton<SaveManager>
 
             GameManager.Instance.returningPlayer = false;
             GameManager.Instance.LoadSaveArea();
+
+            SaveData(Player.Instance.transform.position);
         }
     }
 
@@ -81,10 +81,12 @@ public class SaveManager : MonoSingleton<SaveManager>
         newData.maxMagicKnives = _playerStats.maxMagicKnives;
 
         // Player Progression
+        newData.hasWeapon = _playerProgress.hasWeapon;
         newData.hasSpear = _playerProgress.hasSpear;
         newData.hasScythe = _playerProgress.hasScythe;
         newData.hasTheForgottenScythe = _playerProgress.hasTheForgottenScythe;
         newData.hasMagicGlove = _playerProgress.hasMagicGlove;
+        newData.hasItem = _playerProgress.hasItem;
         newData.hasMagicKnifePouch = _playerProgress.hasMagicKnifePouch;
         newData.hasFireCrystal = _playerProgress.hasFireCrystal;
         newData.hasGhostStaff = _playerProgress.hasGhostStaff;

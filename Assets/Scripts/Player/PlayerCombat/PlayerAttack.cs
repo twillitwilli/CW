@@ -29,7 +29,10 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
     }
 
     public EquippedItem currentEquippedItem;
-    public bool itemIdx { get; set; }
+    public int itemIdx { get; set; }
+
+    [SerializeField]
+    PlayerProgress _playerProgress;
 
     [SerializeField]
     PlayerFacingDirection _facingDirection;
@@ -114,43 +117,130 @@ public class PlayerAttack : MonoBehaviour, iCooldownable
         switch (whichItem)
         {
             case EquippedItem.magicKnifePouch:
-                _equippedUI.ChangeItem(4);
+                _equippedUI.ChangeItem(0);
                 break;
 
             case EquippedItem.fireCrystal:
-                _equippedUI.ChangeItem(5);
+                _equippedUI.ChangeItem(1);
                 break;
 
             case EquippedItem.ghostStaff:
-                _equippedUI.ChangeItem(6);
+                _equippedUI.ChangeItem(2);
                 break;
 
             case EquippedItem.bookOfTruth:
-                _equippedUI.ChangeItem(7);
+                _equippedUI.ChangeItem(3);
                 break;
 
             case EquippedItem.gravityCrystal:
-                _equippedUI.ChangeItem(8);
+                _equippedUI.ChangeItem(4);
                 break;
 
             case EquippedItem.portalCrystal:
-                _equippedUI.ChangeItem(9);
+                _equippedUI.ChangeItem(5);
                 break;
 
             case EquippedItem.magicHourGlass:
-                _equippedUI.ChangeItem(10);
+                _equippedUI.ChangeItem(6);
                 break;
         }
     }
 
     public void NextItem()
     {
+        if (_playerProgress.hasItem)
+        {
+            itemIdx++;
+            if (itemIdx > _equippedUI.itemCount)
+                itemIdx = 0;
 
+            if (!CheckItem())
+                NextItem();
+        }
     }
 
     public void PreviousItem()
     {
+        if (_playerProgress.hasItem)
+        {
+            itemIdx--;
+            if (itemIdx < 0)
+                itemIdx = _equippedUI.itemCount;
 
+            if (!CheckItem())
+                PreviousItem();
+        }
+    }
+
+    private bool CheckItem()
+    {
+        switch (itemIdx)
+        {
+            case 0:
+
+                if (_playerProgress.hasMagicKnifePouch)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.magicKnifePouch);
+                    return true;
+                }
+                break;
+
+            case 1:
+
+                if (_playerProgress.hasFireCrystal)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.fireCrystal);
+                    return true;
+                }
+                break;
+
+            case 2:
+
+                if (_playerProgress.hasGhostStaff)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.ghostStaff);
+                    return true;
+                }
+                break;
+
+            case 3:
+
+                if (_playerProgress.hasBookOfTruth)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.bookOfTruth);
+                    return true;
+                }
+                break;
+
+            case 4:
+
+                if (_playerProgress.hasGravityCrystal)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.gravityCrystal);
+                    return true;
+                }
+                break;
+
+            case 5:
+
+                if (_playerProgress.hasPortalCrystal)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.portalCrystal);
+                    return true;
+                }
+                break;
+
+            case 6:
+
+                if (_playerProgress.hasMagicHourglass)
+                {
+                    EquipItem(PlayerAttack.EquippedItem.magicHourGlass);
+                    return true;
+                }    
+                break;
+        }
+
+        return false;
     }
 
     public void KineticForce()

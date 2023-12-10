@@ -12,14 +12,24 @@ public class EquippedUI : MonoSingleton<EquippedUI>
         _item;
 
     [SerializeField]
-    Sprite[] equipmentUI;
+    Sprite[] _weaponUI;
+
+    [SerializeField]
+    Sprite[] _itemUI;
+
+    public int itemCount { get; private set; }
+
+    private void Start()
+    {
+        itemCount = _itemUI.Length;
+    }
 
     public void ChangePrimaryWeapon(int whichWeapon)
     {
         if (!_primaryWeapon.gameObject.activeSelf)
             _primaryWeapon.gameObject.SetActive(true);
 
-        _primaryWeapon.sprite = equipmentUI[whichWeapon];
+        _primaryWeapon.sprite = _weaponUI[whichWeapon];
     }
 
     public void ChangeItem(int whichItem)
@@ -27,6 +37,6 @@ public class EquippedUI : MonoSingleton<EquippedUI>
         if (!_item.gameObject.activeSelf)
             _item.gameObject.SetActive(true);
 
-        _item.sprite = equipmentUI[whichItem];
+        _item.sprite = _itemUI[whichItem];
     }
 }

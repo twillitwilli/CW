@@ -23,11 +23,13 @@ public class SaveFileSelector : MonoBehaviour
 
             if (File.Exists(fileName))
             {
-                _gameSaveFile[i].UpdateText("Load Game #" + (i + 1));
+                SaveData loadedData = BinarySaveSystem.LoadData(i + 1);
+
+                _gameSaveFile[i].UpdateButton(loadedData, false);
             }
 
             else
-                _gameSaveFile[i].UpdateText("New Game #" + (i + 1));
+                _gameSaveFile[i].UpdateButton(null, true);
         }
     }
 }

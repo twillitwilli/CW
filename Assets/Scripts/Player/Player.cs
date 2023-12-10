@@ -34,8 +34,6 @@ public class Player : MonoSingleton<Player>
 
     public override void Awake()
     {
-        playerName = "TheForgotten";
-
         base.Awake();
 
         controls = new PlayerControls();
@@ -49,7 +47,11 @@ public class Player : MonoSingleton<Player>
 
         // Attacking
         controls.ControllerSupport.BasicAttack.performed += ctx => _playerAttack.Attack();
+
+        // Item Controls
         controls.ControllerSupport.UseItem.performed += ctx => _playerAttack.itemController.UseItem();
+        controls.ControllerSupport.NextItem.performed += ctx => _playerAttack.NextItem();
+        controls.ControllerSupport.PreviousItem.performed += ctx => _playerAttack.PreviousItem();
 
         // Interaction
         controls.ControllerSupport.Interact.performed += ctx => _playerInteractionTrigger.Interact();
